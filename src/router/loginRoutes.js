@@ -7,6 +7,9 @@ const query = util.promisify(connect.query).bind(connect)
 
 //const userRouter = require('../router/')
 
+
+// metodo post par ainiciar sesion se hacenlas respectivas validadciones
+// para saber si ya esta logueado
 router.post('/iniciar_sesion', async(req, res) => {
     const { user, pass } = req.body;
     if (user && pass) {
@@ -47,6 +50,7 @@ router.post('/iniciar_sesion', async(req, res) => {
     }
 })
 
+// metodo post para cerrar sesion se valida por el id par desloguer solo un registro
 router.post('/cerrar_sesion/:id', async(req, res) => {
     const { id } = req.params
     try {
