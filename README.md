@@ -1,0 +1,9 @@
+# apiRickAndMorty
+
+CREAR BASE DE DATOS
+
+CREATE_DATABASE users
+
+CREAR TABLA USUARIOS
+
+CREATE TABLE user ( id int(11) NOT NULL AUTO_INCREMENT, nombre varchar(255) DEFAULT NULL, apellido varchar(255) DEFAULT NULL, user varchar(255) DEFAULT NULL, pass tinyint personalizado 0, PRIMARY KEY (id) ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
