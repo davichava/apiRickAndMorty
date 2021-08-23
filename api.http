@@ -1,0 +1,35 @@
+###
+GET http://localhost:3000/api/user HTTP/1.1
+Content-Type: application/json
+
+###
+POST http://localhost:3000/api/login HTTP/1.1
+Content-Type: application/json
+{
+    "user": "admin",
+    "pass" "admin"
+}
+
+
+###
+POST http://localhost:3000/api/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "david",
+    "apellido": "chavarria"
+}
+
+###
+PUT http://localhost:3000/api/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "david",
+    "apellido": "chavarria"
+}
+
+###
+DELETE http://localhost:3000/api/user/3 HTTP/1.1
+Content-Type: application/json
+
