@@ -1,16 +1,30 @@
-###
-GET http://localhost:3000/api/user HTTP/1.1
-Content-Type: application/json
+// es una extension de visual studio code que nos permite hacer ensayos de la api, tambien existen
+// insomnia, postman que tambien son buenas para consumir apis 
 
+//Metdo post para hacer el login 
 ###
-POST http://localhost:3000/api/login HTTP/1.1
+POST http://localhost:3000/api/login/inicio_sesion HTTP/1.1
 Content-Type: application/json
 {
     "user": "admin",
     "pass" "admin"
 }
 
+//Metdo post para hacer el deslogueo de sesion se le pasa por la url el id que se va a cerrar sesion
+###
+POST http://localhost:3000/api/login/cierre_sesion/id HTTP/1.1
+Content-Type: application/json
 
+
+// se ponen 3 numerales el mertodo GET seguido la ruta
+// para obtener todos los registros de la base de datos
+###
+GET http://localhost:3000/api/user HTTP/1.1
+Content-Type: application/json
+
+
+/// se ponen 3 numerales el mertodo POST seguido la ruta
+// para insertar registros de la base de datos en formato json
 ###
 POST http://localhost:3000/api/user HTTP/1.1
 Content-Type: application/json
@@ -20,15 +34,20 @@ Content-Type: application/json
     "apellido": "chavarria"
 }
 
+
+// metodo put para actualizar un registro de la base de datos se le envia el id como parametro por la url
 ###
-PUT http://localhost:3000/api/user HTTP/1.1
+PUT http://localhost:3000/api/user/id HTTP/1.1
 Content-Type: application/json
 
+//aca en el formato json se modifican los datos digitando los nuevos datos que desea actualizar
 {
     "nombre": "david",
     "apellido": "chavarria"
 }
 
+
+// metodo delete se eliminan los datos que deseen pasandole el id como parametro por la url
 ###
 DELETE http://localhost:3000/api/user/3 HTTP/1.1
 Content-Type: application/json
