@@ -7,6 +7,7 @@ const query = util.promisify(connect.query).bind(connect)
 
 //const userRouter = require('../router/')
 
+// Metodo post para ver todos los registros que contiene la base de datos 
 router.get('/', async(req, res) => {
     try {
         const users = await query('SELECT * FROM users.user')
@@ -23,6 +24,8 @@ router.get('/', async(req, res) => {
     }
 })
 
+
+// metodo post para insertar un nuevo registro a la base de datos 
 router.post('/', async(req, res) => {
     const { nombre, apellido, user, pass } = req.body
     try {
@@ -40,6 +43,8 @@ router.post('/', async(req, res) => {
     }
 })
 
+// metodo put se ultiliza para actualizar la imformacion del registro utilizando el id
+// metodo pacht se utililza para actualizar un datos de dicho registro esta se utiliza cuando hay que actualizar solo un dato
 router.put('/:id', async(req, res) => {
     const { id } = req.params
     const { nuevoNombre } = req.body
@@ -65,6 +70,7 @@ router.put('/:id', async(req, res) => {
     }
 })
 
+// metodo delete se utiliza para eiminar el registro que ya no necesitemos de la base de datos  por el id
 router.delete('/:id', async(req, res) => {
     const { id } = req.params
         // console.log(`DELETE FROM users.user
